@@ -4,18 +4,18 @@ import { useState } from "react";
 import GlowCard from "../../helper/glow-card";
 
 const certifications = [
-  { id: 1, image: "/certificate/certificate1.jpg", title: "Cloud Computing", issuer: "IIT Kharagpur - NPTEL" },
-  { id: 2, image: "/certificate/certificate2.jpg", title: "Linux and SQL", issuer: "Google - Coursera" },
-  { id: 3, image: "/certificate/certificate3.jpg", title: "MERN + GenAI", issuer: "W3elites" },
-  { id: 4, image: "/certificate/certificate4.jpg", title: "Web Applications PHP", issuer: "University of Michigan - Coursera" },
-  { id: 5, image: "/certificate/certificate5.jpg", title: "GenAI for Everyone", issuer: "Fractal - Coursera" },
-  { id: 6, image: "/certificate/certificate6.jpg", title: "Generative AI for Everyone", issuer: "DeepLearning.AI - Coursera" },
-  { id: 7, image: "/certificate/certificate7.jpg", title: "Introduction to Generative AI", issuer: "Google Cloud - Coursera" },
-  { id: 8, image: "/certificate/certificate8.jpg", title: "Introduction to LLMs", issuer: "Google Cloud - Coursera" },
-  { id: 9, image: "/certificate/certificate9.jpg", title: "Generative AI Primer", issuer: "Vanderbilt University - Coursera" },
-  { id: 10, image: "/certificate/certificate10.jpg", title: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt University - Coursera" },
-  { id: 11, image: "/certificate/certificate11.jpg", title: "ChatGPT Advanced Data Analysis", issuer: "Vanderbilt University - Coursera" },
-  { id: 12, image: "/certificate/certificate12.jpg", title: "Programming in C++", issuer: "Codio - Coursera" },
+  { id: 1, image: "/certificate/Certificate1.jpg", title: "Cloud Computing", issuer: "IIT Kharagpur - NPTEL" },
+  { id: 2, image: "/certificate/Certificate2.jpg", title: "Linux and SQL", issuer: "Google - Coursera" },
+  { id: 3, image: "/certificate/Certificate3.jpg", title: "MERN + GenAI", issuer: "W3elites" },
+  { id: 4, image: "/certificate/Certificate4.jpg", title: "Web Applications PHP", issuer: "University of Michigan - Coursera" },
+  { id: 5, image: "/certificate/Certificate5.jpg", title: "GenAI for Everyone", issuer: "Fractal - Coursera" },
+  { id: 6, image: "/certificate/Certificate6.jpg", title: "Generative AI for Everyone", issuer: "DeepLearning.AI - Coursera" },
+  { id: 7, image: "/certificate/Certificate7.jpg", title: "Introduction to Generative AI", issuer: "Google Cloud - Coursera" },
+  { id: 8, image: "/certificate/Certificate8.jpg", title: "Introduction to LLMs", issuer: "Google Cloud - Coursera" },
+  { id: 9, image: "/certificate/Certificate9.jpg", title: "Generative AI Primer", issuer: "Vanderbilt University - Coursera" },
+  { id: 10, image: "/certificate/Certificate10.jpg", title: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt University - Coursera" },
+  { id: 11, image: "/certificate/Certificate11.jpg", title: "ChatGPT Advanced Data Analysis", issuer: "Vanderbilt University - Coursera" },
+  { id: 12, image: "/certificate/Certificate12.jpg", title: "Programming in C++", issuer: "Codio - Coursera" },
 ];
 
 function Certificate() {
