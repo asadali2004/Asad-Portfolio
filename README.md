@@ -26,5 +26,6 @@ Smooth animations
 
 Interactive UI with modern styling
 
-📸 Preview
+![Screenshot 2025-04-28 000108](https://github.com/user-attachments/assets/db39d667-dd3b-4e1b-a74b-e02a7da10401)
+
 
