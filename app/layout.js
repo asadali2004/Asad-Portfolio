@@ -7,12 +7,16 @@ import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Portfolio of Asad Ali - Full-Stack Developer",
   description:
     "This is the portfolio of Asad Ali. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+  icons: {
+    icon: "/favicon.ico?v=2",  // <-- Added here!
+  },
 };
 
 export default function RootLayout({ children }) {

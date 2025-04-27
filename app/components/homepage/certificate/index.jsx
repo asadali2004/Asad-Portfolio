@@ -59,9 +59,8 @@ function Certificate() {
                   <Image
                     src={certificate.image}
                     alt={certificate.title}
-                    layout="fill"
-                    objectFit="contain"
-                    className="rounded-lg"
+                    fill
+                    className="rounded-lg object-contain"
                   />
                 </div>
                 <div className="mt-4 text-center">
@@ -81,10 +80,10 @@ function Certificate() {
             <Image
               src={selectedImage}
               alt="Certificate Full View"
-              layout="responsive"
               width={1410}
               height={1000}
               className="rounded-lg bg-white"
+              style={{ width: "100%", height: "auto" }}
             />
             <button
               onClick={closeImage}
