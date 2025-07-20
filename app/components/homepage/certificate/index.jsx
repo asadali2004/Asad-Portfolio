@@ -4,18 +4,18 @@ import { useState } from "react";
 import GlowCard from "../../helper/glow-card";
 
 const certifications = [
-  { id: 1, image: "/certificate/Certificate1.jpg", title: "Cloud Computing", issuer: "IIT Kharagpur - NPTEL" },
-  { id: 2, image: "/certificate/Certificate2.jpg", title: "Linux and SQL", issuer: "Google - Coursera" },
-  { id: 3, image: "/certificate/Certificate3.jpg", title: "MERN + GenAI", issuer: "W3elites" },
-  { id: 4, image: "/certificate/Certificate4.jpg", title: "Web Applications PHP", issuer: "University of Michigan - Coursera" },
-  { id: 5, image: "/certificate/Certificate5.jpg", title: "GenAI for Everyone", issuer: "Fractal - Coursera" },
-  { id: 6, image: "/certificate/Certificate6.jpg", title: "Generative AI for Everyone", issuer: "DeepLearning.AI - Coursera" },
-  { id: 7, image: "/certificate/Certificate7.jpg", title: "Introduction to Generative AI", issuer: "Google Cloud - Coursera" },
-  { id: 8, image: "/certificate/Certificate8.jpg", title: "Introduction to LLMs", issuer: "Google Cloud - Coursera" },
-  { id: 9, image: "/certificate/Certificate9.jpg", title: "Generative AI Primer", issuer: "Vanderbilt University - Coursera" },
-  { id: 10, image: "/certificate/Certificate10.jpg", title: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt University - Coursera" },
-  { id: 11, image: "/certificate/Certificate11.jpg", title: "ChatGPT Advanced Data Analysis", issuer: "Vanderbilt University - Coursera" },
-  { id: 12, image: "/certificate/Certificate12.jpg", title: "Programming in C++", issuer: "Codio - Coursera" },
+  { id: 1, image: "/certificate/HCIcertificate.jpg", title: "Human Computer Interaction", issuer: "NPTEL" },
+  { id: 2, image: "/certificate/Certificate1.jpg", title: "Cloud Computing", issuer: "IIT Kharagpur - NPTEL" },
+  { id: 3, image: "/certificate/Certificate2.jpg", title: "Linux and SQL", issuer: "Google - Coursera" },
+  { id: 4, image: "/certificate/Certificate3.jpg", title: "MERN + GenAI", issuer: "W3elites" },
+  { id: 5, image: "/certificate/Certificate4.jpg", title: "Web Applications PHP", issuer: "University of Michigan - Coursera" },
+  { id: 6, image: "/certificate/Certificate5.jpg", title: "GenAI for Everyone", issuer: "Fractal - Coursera" },
+  { id: 7, image: "/certificate/Certificate6.jpg", title: "Generative AI for Everyone", issuer: "DeepLearning.AI - Coursera" },
+  { id: 8, image: "/certificate/Certificate7.jpg", title: "Introduction to Generative AI", issuer: "Google Cloud - Coursera" },
+  { id: 9, image: "/certificate/Certificate8.jpg", title: "Introduction to LLMs", issuer: "Google Cloud - Coursera" },
+  { id: 10, image: "/certificate/Certificate9.jpg", title: "Generative AI Primer", issuer: "Vanderbilt University - Coursera" },
+  { id: 11, image: "/certificate/Certificate10.jpg", title: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt University - Coursera" },
+  { id: 12, image: "/certificate/Certificate11.jpg", title: "ChatGPT Advanced Data Analysis", issuer: "Vanderbilt University - Coursera" },
 ];
 
 function Certificate() {
@@ -25,7 +25,7 @@ function Certificate() {
   const closeImage = () => setSelectedImage(null);
 
   return (
-    <div id="certificate" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="certificate" className="relative z-50 border-t my-12 lg:my-24 border-emerald-500/30">
       {/* Background */}
       <Image
         src="/section.svg"
@@ -36,23 +36,23 @@ function Certificate() {
       />
 
       {/* Title */}
-      <div className="flex justify-center my-5 lg:py-8">
+      <div className="flex justify-center my-8 lg:py-12">
         <div className="flex items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Certificates
+          <span className="w-24 h-[2px] bg-gradient-to-r from-transparent to-emerald-400"></span>
+          <span className="bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent w-fit p-2 px-8 text-2xl font-bold rounded-md">
+            Certifications & Achievements
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-gradient-to-l from-transparent to-cyan-500"></span>
         </div>
       </div>
 
       {/* Certificates Grid */}
-      <div className="py-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+      <div className="py-8 max-w-7xl mx-auto">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(260px,1fr))] justify-items-center">
           {certifications.map((certificate) => (
             <GlowCard key={certificate.id} identifier={`certificate-${certificate.id}`}>
               <div
-                className="p-4 relative cursor-pointer transition-transform hover:scale-105 duration-300 flex flex-col items-center"
+                className="p-4 relative cursor-pointer transition-transform hover:scale-105 duration-300 flex flex-col items-center w-full max-w-[340px]"
                 onClick={() => openImage(certificate.image)}
               >
                 <div className="relative w-[300px] h-[220px] overflow-hidden rounded-lg bg-white">
@@ -60,6 +60,7 @@ function Certificate() {
                     src={certificate.image}
                     alt={certificate.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="rounded-lg object-contain"
                   />
                 </div>
@@ -82,6 +83,7 @@ function Certificate() {
               alt="Certificate Full View"
               width={1410}
               height={1000}
+              sizes="90vw"
               className="rounded-lg bg-white"
               style={{ width: "100%", height: "auto" }}
             />

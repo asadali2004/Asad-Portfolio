@@ -253,6 +253,7 @@ export const skillsImage = (skill) => {
       return sqlalchemy;
     case 'fastapi':
       return fastapi;
+    // Remove incorrect mappings - let these skills use custom colored badges instead
     default:
       break;
   }

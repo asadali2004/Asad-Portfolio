@@ -3,69 +3,161 @@
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
 
 function Skills() {
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
+    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-emerald-800/30">
+      {/* Modern background elements with 2025 colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/10 via-cyan-900/15 to-blue-900/10 rounded-3xl"></div>
+      <div className="w-[150px] h-[150px] bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl"></div>
+      <div className="w-[100px] h-[100px] bg-gradient-to-r from-orange-400/15 to-amber-400/15 rounded-full absolute bottom-10 right-10 filter blur-2xl"></div>
 
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-emerald-400 to-transparent w-full" />
         </div>
       </div>
 
       <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
+        <div className="flex items-center">
+          <span className="w-24 h-[2px] bg-gradient-to-r from-transparent to-emerald-500"></span>
+          <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 w-fit text-white p-2 px-5 text-xl rounded-md backdrop-blur-sm">
+            Technical Skills
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-gradient-to-l from-transparent to-cyan-500"></span>
         </div>
       </div>
 
-      <div className="w-full my-12">
-        <Marquee
-          gradient={false}
-          speed={80}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          delay={0}
-          play={true}
-          direction="left"
-        >
-          {skillsData.map((skill, id) => (
-            <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
-              key={id}>
-              <div className="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-                  </div>
-                </div>
-                <div className="flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="h-8 sm:h-10">
-                    <Image
-                      src={skillsImage(skill)?.src}
-                      alt={skill}
-                      width={40}
-                      height={40}
-                      className="h-full w-auto rounded-lg"
-                    />
-                  </div>
-                  <p className="text-white text-sm sm:text-lg">
-                    {skill}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </Marquee>
+      {/* Skills Categories */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        {/* Programming Languages */}
+        <div className="mb-12">
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Programming Languages</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {['Java', 'Python', 'Javascript', 'HTML', 'CSS'].map((skill, id) => (
+              <SkillCard key={id} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* Web Development */}
+        <div className="mb-12">
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Web Development</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {['React', 'Node JS', 'Tailwind', 'Bootstrap', 'MaterialUI', 'Typescript'].map((skill, id) => (
+              <SkillCard key={id} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* Backend & Databases */}
+        <div className="mb-12">
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Backend & Databases</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {['MongoDB', 'MySQL', 'PHP', 'Git', 'API Integration', 'DBMS'].map((skill, id) => (
+              <SkillCard key={id} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* DevOps & Cloud Technologies */}
+        <div className="mb-12">
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">DevOps & Cloud Technologies</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {['Linux', 'AWS', 'Docker', 'Jenkins', 'Terraform', 'Kubernetes', 'Nginx', 'Shell Scripting'].map((skill, id) => (
+              <SkillCard key={id} skill={skill} />
+            ))}
+          </div>
+        </div>
+
+        {/* Technical Concepts & Methodologies */}
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Technical Concepts & Methodologies</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {['SDLC', 'Agile Development', 'OOPs', 'DSA', 'GenAI', 'Computer Networks'].map((skill, id) => (
+              <SkillCard key={id} skill={skill} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+}
+
+function SkillCard({ skill }) {
+  const skillImage = skillsImage(skill);
+  
+  // Define specific colors and better text handling for skills without proper icons
+  const getSkillProps = (skill) => {
+    const skillMap = {
+      'Java': { color: 'from-orange-500 to-red-600', text: 'JAVA' },
+      'Python': { color: 'from-blue-500 to-indigo-600', text: 'PY' },
+      'Javascript': { color: 'from-yellow-400 to-orange-500', text: 'JS' },
+      'HTML': { color: 'from-orange-500 to-red-500', text: 'HTML' },
+      'CSS': { color: 'from-blue-400 to-blue-600', text: 'CSS' },
+      'React': { color: 'from-cyan-400 to-blue-500', text: 'REACT' },
+      'Node JS': { color: 'from-green-500 to-emerald-600', text: 'NODE' },
+      'Tailwind': { color: 'from-cyan-300 to-blue-500', text: 'TW' },
+      'Bootstrap': { color: 'from-purple-500 to-purple-700', text: 'BS' },
+      'MaterialUI': { color: 'from-blue-600 to-indigo-700', text: 'MUI' },
+      'Typescript': { color: 'from-blue-500 to-blue-700', text: 'TS' },
+      'MongoDB': { color: 'from-green-500 to-green-700', text: 'MONGO' },
+      'MySQL': { color: 'from-blue-500 to-cyan-600', text: 'SQL' },
+      'PHP': { color: 'from-purple-500 to-indigo-600', text: 'PHP' },
+      'Git': { color: 'from-orange-500 to-red-600', text: 'GIT' },
+      'API Integration': { color: 'from-pink-500 to-purple-600', text: 'API' },
+      'DBMS': { color: 'from-blue-600 to-purple-600', text: 'DBMS' },
+      'Linux': { color: 'from-yellow-400 to-orange-500', text: 'LINUX' },
+      'AWS': { color: 'from-orange-400 to-yellow-500', text: 'AWS' },
+      'Docker': { color: 'from-blue-400 to-cyan-500', text: 'DOCK' },
+      'Jenkins': { color: 'from-red-500 to-orange-600', text: 'J' },
+      'Terraform': { color: 'from-purple-500 to-indigo-600', text: 'T' },
+      'Kubernetes': { color: 'from-blue-500 to-purple-600', text: 'K8S' },
+      'Nginx': { color: 'from-green-500 to-teal-600', text: 'NGINX' },
+      'Shell Scripting': { color: 'from-gray-600 to-gray-800', text: 'SHELL' },
+      'SDLC': { color: 'from-indigo-500 to-purple-600', text: 'SDLC' },
+      'Agile Development': { color: 'from-green-500 to-blue-600', text: 'AGILE' },
+      'OOPs': { color: 'from-blue-500 to-indigo-600', text: 'OOP' },
+      'DSA': { color: 'from-purple-500 to-pink-600', text: 'DSA' },
+      'GenAI': { color: 'from-pink-500 to-purple-600', text: 'AI' },
+      'Computer Networks': { color: 'from-cyan-500 to-blue-600', text: 'NET' },
+    };
+    
+    return skillMap[skill] || { color: 'from-violet-500 to-pink-500', text: skill.charAt(0).toUpperCase() };
+  };
+  
+  const skillProps = getSkillProps(skill);
+  
+  return (
+    <div className="group relative flex flex-col items-center justify-center p-4 rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-900/20 via-cyan-900/15 to-slate-900/30 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-emerald-400/50 hover:bg-gradient-to-br hover:from-emerald-900/30 hover:via-cyan-900/25 hover:to-slate-900/40 hover:shadow-lg hover:shadow-emerald-500/20 cursor-pointer">
+      <div className="flex -translate-y-[1px] justify-center absolute top-0 left-0 right-0">
+        <div className="w-3/4">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/0 group-hover:via-emerald-400 to-transparent transition-all duration-300" />
+        </div>
+      </div>
+      
+      <div className="h-12 w-12 mb-3 flex items-center justify-center">
+        {skillImage ? (
+          <Image
+            src={skillImage.src}
+            alt={skill}
+            width={48}
+            height={48}
+            className="h-12 w-12 rounded-lg object-contain group-hover:scale-110 transition-transform duration-300"
+            style={{ width: 'auto', height: 'auto', maxWidth: '48px', maxHeight: '48px' }}
+          />
+        ) : (
+          <div className={`w-12 h-12 bg-gradient-to-br ${skillProps.color} rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+            {skillProps.text}
+          </div>
+        )}
+      </div>
+      
+      <p className="text-white text-sm font-medium text-center group-hover:text-emerald-300 transition-colors duration-300 leading-tight">
+        {skill}
+      </p>
+    </div>
+  );
+}
 
 export default Skills;

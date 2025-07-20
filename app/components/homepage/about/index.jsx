@@ -7,11 +7,16 @@ import Image from "next/image";
 function AboutSection() {
   return (
     <div id="about" className="my-12 lg:my-16 relative">
-      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+      {/* Modern background elements with 2025 colors */}
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/5 via-transparent to-cyan-900/5 rounded-3xl"></div>
+      <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-64 h-64 bg-gradient-to-r from-orange-400/10 to-amber-400/10 rounded-full filter blur-3xl"></div>
+      
+      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8 z-10">
+        <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md backdrop-blur-sm">
           ABOUT ME
         </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+        <span className="h-36 w-[2px] bg-gradient-to-b from-emerald-500 to-cyan-500"></span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
         <div className="order-2 lg:order-1">

@@ -9,7 +9,7 @@ import GlowCard from "../../helper/glow-card";
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-emerald-500/30">
       <Image
         src="/section.svg"
         alt="Hero"
@@ -20,19 +20,19 @@ function Experience() {
 
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
+          <span className="w-24 h-[2px] bg-gradient-to-r from-emerald-600 to-cyan-600"></span>
+          <span className="bg-gradient-to-r from-emerald-700 to-cyan-700 w-fit text-white p-2 px-5 text-xl rounded-md backdrop-blur-sm border border-emerald-500/30">
             Experiences
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-gradient-to-r from-cyan-600 to-emerald-600"></span>
         </div>
       </div>
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
+            <div className="flex items-center justify-center w-full h-full min-h-[300px]">
+              <img src="/assets/svg/experience/expBlue.svg" alt="Experience Illustration" className="w-full max-w-[400px] h-auto object-contain mx-auto" />
             </div>
           </div>
 

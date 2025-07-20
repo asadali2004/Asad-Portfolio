@@ -8,7 +8,7 @@ import { FaCommentAlt } from 'react-icons/fa';
 function BlogCard({ blog }) {
 
   return (
-    <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
+    <div className="border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-500 bg-gradient-to-br from-emerald-900/30 via-cyan-900/20 to-slate-900/40 backdrop-blur-sm rounded-lg relative group"
     >
       <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
         <Image

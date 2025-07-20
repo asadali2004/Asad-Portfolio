@@ -8,7 +8,7 @@ import GlowCard from "../../helper/glow-card";
 
 function Education() {
   return (
-    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
+    <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-emerald-500/30">
       <Image
         src="/section.svg"
         alt="Hero"
@@ -18,25 +18,25 @@ function Education() {
       />
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
+          <div className="h-[1px] bg-gradient-to-r from-transparent via-emerald-400 to-transparent w-full" />
         </div>
       </div>
 
       <div className="flex justify-center my-5 lg:py-8">
         <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
+          <span className="w-24 h-[2px] bg-gradient-to-r from-emerald-600 to-cyan-600"></span>
+          <span className="bg-gradient-to-r from-emerald-700 to-cyan-700 w-fit text-white p-2 px-5 text-xl rounded-md backdrop-blur-sm border border-emerald-500/30">
+            Education
           </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
+          <span className="w-24 h-[2px] bg-gradient-to-r from-cyan-600 to-emerald-600"></span>
         </div>
       </div>
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
-            <div className="w-3/4 h-3/4">
-              <AnimationLottie animationPath={lottieFile} />
+            <div className="flex items-center justify-center w-full h-full min-h-[300px]">
+              <img src="/assets/svg/education/eduBlue.svg" alt="Education Illustration" className="w-full max-w-[400px] h-auto object-contain mx-auto" />
             </div>
           </div>
 
@@ -79,6 +79,6 @@ function Education() {
       </div>
     </div>
   );
-};
+}
 
 export default Education;

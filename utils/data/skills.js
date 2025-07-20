@@ -1,24 +1,44 @@
 export const skillsData = [
+  // Programming Languages
   'Java',
-  'C++',
+  'Python',
+  'Javascript',
   'HTML',
   'CSS',
-  'Javascript',
-  'PHP',
-  'Typescript',
+  
+  // Web Development
   'React',
   'Node JS',
   'Tailwind',
+  'Bootstrap',
+  'MaterialUI',
+  'Typescript',
+  
+  // Backend & Databases
   'MongoDB',
   'MySQL',
-  'PostgreSQL',
+  'PHP',
   'Git',
+  'API Integration',
+  'DBMS',
+  
+  // DevOps & Cloud Technologies
+  'Linux',
   'AWS',
-  'Bootstrap',
   'Docker',
-  'Canva',
-  'MaterialUI',
-  'Nginx'
+  'Jenkins',
+  'Terraform',
+  'Kubernetes',
+  'Nginx',
+  'Shell Scripting',
+  
+  // Technical Concepts & Methodologies
+  'SDLC',
+  'Agile Development',
+  'OOPs',
+  'DSA',
+  'GenAI',
+  'Computer Networks'
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.
