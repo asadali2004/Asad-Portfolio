@@ -19,7 +19,7 @@ function Experience() {
       />
 
       <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
+        <div className="flex items-center">
           <span className="w-24 h-[2px] bg-gradient-to-r from-emerald-600 to-cyan-600"></span>
           <span className="bg-gradient-to-r from-emerald-700 to-cyan-700 w-fit text-white p-2 px-5 text-xl rounded-md backdrop-blur-sm border border-emerald-500/30">
             Experiences
@@ -32,7 +32,13 @@ function Experience() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           <div className="flex justify-center items-start">
             <div className="flex items-center justify-center w-full h-full min-h-[300px]">
-              <img src="/assets/svg/experience/expBlue.svg" alt="Experience Illustration" className="w-full max-w-[400px] h-auto object-contain mx-auto" />
+              <Image
+                src="/assets/svg/experience/expBlue.svg"
+                alt="Experience Illustration"
+                width={400}
+                height={300}
+                className="w-full max-w-[400px] h-auto object-contain mx-auto"
+              />
             </div>
           </div>
 
@@ -55,7 +61,7 @@ function Experience() {
                         </p>
                       </div>
                       <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                        <div className="text-violet-500 transition-all duration-300 hover:scale-125">
                           <BsPersonWorkspace size={36} />
                         </div>
                         <div>
@@ -77,6 +83,6 @@ function Experience() {
       </div>
     </div>
   );
-};
+}
 
 export default Experience;
