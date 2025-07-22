@@ -5,12 +5,12 @@ import * as React from 'react';
 function ProjectCard({ project }) {
 
   return (
-    <div className="relative rounded-xl overflow-hidden group hover:scale-[1.02] transition-all duration-300">
+    <div className="relative rounded-xl overflow-hidden group smooth-transform hover:scale-[1.02]">
       {/* Glass morphism background with better opacity */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-cyan-900/50 to-slate-900/70 backdrop-blur-xl"></div>
       
       {/* Enhanced border with glow effect */}
-      <div className="absolute inset-0 rounded-xl border border-emerald-400/40 group-hover:border-emerald-300/60 transition-all duration-300 shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-400/20"></div>
+      <div className="absolute inset-0 rounded-xl border border-emerald-400/40 group-hover:border-emerald-300/60 smooth-transition shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-400/20"></div>
       
       {/* Content container with relative positioning */}
       <div className="relative z-10 w-full">
@@ -73,6 +73,32 @@ function ProjectCard({ project }) {
           </div>
           <div><span className="text-gray-300 drop-shadow-sm">{`};`}</span></div>
         </code>
+        
+        {/* Action buttons */}
+        <div className="px-4 lg:px-8 py-4 bg-black/20 backdrop-blur-sm border-t border-emerald-400/20">
+          <div className="flex gap-3 justify-center">
+            {project.code && (
+              <a
+                href={project.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-sm font-medium rounded-lg btn-smooth shadow-lg hover:shadow-emerald-500/25 border border-emerald-400/30"
+              >
+                View Code
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm font-medium rounded-lg btn-smooth shadow-lg hover:shadow-orange-500/25 border border-orange-400/30"
+              >
+                Live Demo
+              </a>
+            )}
+          </div>
+        </div>
       </div>
     </div>
     </div>

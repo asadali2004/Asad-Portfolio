@@ -30,51 +30,31 @@ function Skills() {
 
       {/* Skills Categories */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Programming Languages */}
+        {/* Programming Languages & Web Technologies */}
         <div className="mb-12">
-          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Programming Languages</h3>
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Programming Languages & Web Technologies</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['Java', 'Python', 'Javascript', 'HTML', 'CSS'].map((skill, id) => (
+            {['Java', 'Python', 'Javascript', 'Typescript', 'PHP', 'HTML', 'CSS', 'React', 'Node JS'].map((skill, id) => (
               <SkillCard key={id} skill={skill} />
             ))}
           </div>
         </div>
 
-        {/* Web Development */}
+        {/* Frameworks & Tools */}
         <div className="mb-12">
-          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Web Development</h3>
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Frameworks & Development Tools</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['React', 'Node JS', 'Tailwind', 'Bootstrap', 'MaterialUI', 'Typescript'].map((skill, id) => (
+            {['Tailwind', 'Bootstrap', 'MaterialUI', 'MongoDB', 'MySQL', 'Git', 'Linux', 'Nginx'].map((skill, id) => (
               <SkillCard key={id} skill={skill} />
             ))}
           </div>
         </div>
 
-        {/* Backend & Databases */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Backend & Databases</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['MongoDB', 'MySQL', 'PHP', 'Git', 'API Integration', 'DBMS'].map((skill, id) => (
-              <SkillCard key={id} skill={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* DevOps & Cloud Technologies */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">DevOps & Cloud Technologies</h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['Linux', 'AWS', 'Docker', 'Jenkins', 'Terraform', 'Kubernetes', 'Nginx', 'Shell Scripting'].map((skill, id) => (
-              <SkillCard key={id} skill={skill} />
-            ))}
-          </div>
-        </div>
-
-        {/* Technical Concepts & Methodologies */}
+        {/* Cloud & DevOps Technologies */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Technical Concepts & Methodologies</h3>
+          <h3 className="text-xl font-semibold text-emerald-400 mb-6 text-center">Cloud & DevOps Technologies</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['SDLC', 'Agile Development', 'OOPs', 'DSA', 'GenAI', 'Computer Networks'].map((skill, id) => (
+            {['AWS', 'Docker', 'Jenkins', 'Terraform', 'Kubernetes', 'Shell Scripting', 'GenAI'].map((skill, id) => (
               <SkillCard key={id} skill={skill} />
             ))}
           </div>

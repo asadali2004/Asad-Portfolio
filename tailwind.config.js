@@ -18,11 +18,29 @@ module.exports = {
         'glow': 'glow 2s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
+        'fadeInUp': 'fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+        'slideIn': 'slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+        'scaleIn': 'scaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'bounce-smooth': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'out-smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'in-out-smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      },
+      transitionDuration: {
+        '150': '150ms',
+        '200': '200ms',
+        '250': '250ms',
+        '350': '350ms',
+        '400': '400ms',
+        '450': '450ms',
+        '600': '600ms',
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '0%, 100%': { transform: 'translate3d(0, 0px, 0)' },
+          '50%': { transform: 'translate3d(0, -10px, 0)' },
         },
         glow: {
           '0%, 100%': { 
@@ -30,6 +48,36 @@ module.exports = {
           },
           '50%': { 
             textShadow: '0 0 10px rgba(22, 242, 179, 0.5), 0 0 20px rgba(22, 242, 179, 0.3)' 
+          },
+        },
+        fadeInUp: {
+          'from': {
+            opacity: '0',
+            transform: 'translate3d(0, 30px, 0)',
+          },
+          'to': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+        slideIn: {
+          'from': {
+            opacity: '0',
+            transform: 'translate3d(-20px, 0, 0)',
+          },
+          'to': {
+            opacity: '1',
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
+        scaleIn: {
+          'from': {
+            opacity: '0',
+            transform: 'scale3d(0.9, 0.9, 1)',
+          },
+          'to': {
+            opacity: '1',
+            transform: 'scale3d(1, 1, 1)',
           },
         },
       },

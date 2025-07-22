@@ -70,7 +70,12 @@ function Education() {
                       <p className="text-base sm:text-xl mb-2 font-medium uppercase">
                         {education.title}
                       </p>
-                      <p className="text-sm sm:text-base">{education.institution}</p>
+                      <p className="text-sm sm:text-base mb-1">{education.institution}</p>
+                      {education.marks && (
+                        <p className="text-sm text-emerald-400 font-semibold">
+                          Score: {education.marks}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

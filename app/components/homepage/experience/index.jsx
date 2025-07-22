@@ -21,7 +21,7 @@ function Experience() {
         <div className="flex items-center gap-4">
           <span className="w-24 h-[2px] bg-gradient-to-r from-emerald-600 to-cyan-600"></span>
           <h2 className="bg-gradient-to-r from-emerald-700 to-cyan-700 w-fit text-white p-2 px-5 text-xl rounded-md backdrop-blur-sm border border-emerald-500/30">
-            Experiences
+            Professional Training
           </h2>
           <span className="w-24 h-[2px] bg-gradient-to-r from-cyan-600 to-emerald-600"></span>
         </div>
@@ -50,20 +50,41 @@ function Experience() {
                   className="absolute bottom-0 opacity-80"
                 />
                 <div className="text-center">
-                  <p className="text-xs sm:text-sm text-[#16f2b3]">
+                  <p className="text-xs sm:text-sm text-emerald-400 font-medium">
                     {experience.duration}
                   </p>
                 </div>
-                <div className="flex items-center gap-x-6 px-3 py-5">
-                  <BsPersonWorkspace size={36} className="text-violet-500 hover:scale-125 transition-all duration-300" />
-                  <div>
-                    <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                      {experience.title}
-                    </p>
-                    <p className="text-sm sm:text-base">
-                      {experience.company}
-                    </p>
+                <div className="px-4 py-5">
+                  <div className="flex items-center gap-x-6 mb-4">
+                    <BsPersonWorkspace size={36} className="text-emerald-500 hover:scale-125 transition-all duration-300" />
+                    <div>
+                      <p className="text-base sm:text-xl mb-2 font-medium uppercase text-white">
+                        {experience.title}
+                      </p>
+                      <p className="text-sm sm:text-base text-gray-300">
+                        {experience.company}
+                      </p>
+                    </div>
                   </div>
+                  
+                  {/* Description */}
+                  {experience.description && (
+                    <div className="mb-4">
+                      <p className="text-sm text-gray-200 leading-relaxed text-justify">
+                        {experience.description}
+                      </p>
+                    </div>
+                  )}
+                  
+                  {/* Skills */}
+                  {experience.skills && (
+                    <div>
+                      <p className="text-xs text-emerald-400 font-semibold mb-2">Skills Gained:</p>
+                      <p className="text-xs text-cyan-300 leading-relaxed">
+                        {experience.skills}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </GlowCard>

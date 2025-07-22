@@ -15,33 +15,33 @@ function Navbar() {
 
         <ul className="hidden md:flex md:flex-row md:space-x-1 md:items-center" id="navbar-default">
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#about">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">ABOUT</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#about">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">ABOUT</div>
             </Link>
           </li>
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#experience">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">EXPERIENCE</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#experience">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">EXPERIENCE</div>
             </Link>
           </li>
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#skills">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">SKILLS</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#skills">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">SKILLS</div>
             </Link>
           </li>
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#education">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">EDUCATION</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#education">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">EDUCATION</div>
             </Link>
           </li>
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#certificate">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">CERTIFICATES</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#certificate">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">CERTIFICATES</div>
             </Link>
           </li>
           <li>
-            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 hover:bg-[#16f2b3]/10" href="/#projects">
-              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 hover:text-[#16f2b3]">PROJECTS</div>
+            <Link className="block px-3 py-2 no-underline outline-none hover:no-underline rounded-lg transition-all duration-300 ease-out hover:bg-[#16f2b3]/10" href="/#projects">
+              <div className="text-sm font-medium text-gray-300 transition-colors duration-300 ease-out hover:text-[#16f2b3]">PROJECTS</div>
             </Link>
           </li>
         </ul>

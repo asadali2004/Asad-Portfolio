@@ -2,6 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent layout shifts */
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Optimize rendering with hardware acceleration */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Remove will-change after animation */
+.animation-finished {
+  will-change: auto;
+}
+
+/* Smooth transition utilities */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-transform {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.btn-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.btn-smooth:hover {
+  transform: scale(1.05) translateZ(0);
+}
+
 :root {
   --foreground-rgb: rgb(211, 216, 232);
   --background-gradient: linear-gradient(135deg, #0f172a 0%, #064e3b 25%, #155e75 50%, #064e3b 75%, #0f172a 100%);
@@ -17,12 +66,16 @@
   }
 }
 
+/* Enable hardware acceleration for smooth animations */
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-gradient);
   background-attachment: fixed;
   min-height: 100vh;
   position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 body::before {
@@ -37,10 +90,16 @@ body::before {
   z-index: -1;
 }
 
-/* Enhanced animations */
+/* Enhanced animations with GPU acceleration */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { 
+    transform: translate3d(0, 0px, 0); 
+    will-change: transform;
+  }
+  50% { 
+    transform: translate3d(0, -10px, 0); 
+    will-change: transform;
+  }
 }
 
 @keyframes glow {
@@ -51,16 +110,45 @@ body::before {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
+    will-change: transform, opacity;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+    will-change: transform, opacity;
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.9, 0.9, 1);
+    will-change: transform, opacity;
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+    will-change: auto;
   }
 }
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 .animate-glow {
@@ -68,7 +156,48 @@ body::before {
 }
 
 .animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.smooth-transform {
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.smooth-opacity {
+  transition: opacity 0.2s ease-out;
+}
+
+/* Button optimized transitions */
+.btn-smooth {
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.btn-smooth:hover {
+  transform: translate3d(0, -2px, 0) scale(1.02);
+}
+
+.btn-smooth:active {
+  transform: translate3d(0, 0, 0) scale(0.98);
+  transition-duration: 0.1s;
 }
 
 /* Enhanced background animations */
