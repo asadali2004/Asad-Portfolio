@@ -3,10 +3,12 @@ import { educations } from "@/utils/data/educations";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
 import GlowCard from "../../helper/glow-card";
+import SectionWrapper from "../../SectionWrapper";
 
 function Education() {
   return (
-    <section id="education" className="relative z-50 border-t my-12 lg:my-24 border-emerald-500/30">
+    <SectionWrapper>
+      <section id="education" className="relative z-50 border-t my-12 lg:my-24 border-emerald-500/30">
       <Image
         src="/section.svg"
         alt="Section background"
@@ -85,6 +87,7 @@ function Education() {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 }
 

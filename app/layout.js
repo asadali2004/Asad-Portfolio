@@ -1,10 +1,9 @@
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/helper/scroll-to-top";
-import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 
@@ -29,7 +28,7 @@ export default function RootLayout({ children }) {
         <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-400/8 via-transparent to-transparent pointer-events-none"></div>
         
         <ToastContainer 
-          position="top-right"
+          position="bottom-center"
           autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
@@ -42,9 +41,8 @@ export default function RootLayout({ children }) {
           style={{ zIndex: 99999 }}
           toastStyle={{ zIndex: 99999 }}
         />
-        <Navbar />
-        <main className="min-h-screen relative w-full text-white pt-20 z-10">
-          <div className="mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] relative z-10">
+        <main className="min-h-screen relative w-full text-white z-10">
+          <div className="w-full relative z-10">
             {children}
             <ScrollToTop />
           </div>

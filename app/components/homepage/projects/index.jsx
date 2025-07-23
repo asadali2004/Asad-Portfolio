@@ -1,10 +1,12 @@
 import { projectsData } from '@/utils/data/projects-data';
 import ProjectCard from './project-card';
+import SectionWrapper from '../../SectionWrapper';
 
 const Projects = () => {
 
   return (
-    <div id='projects' className="relative z-50  my-12 lg:my-24">
+    <SectionWrapper>
+      <div id='projects' className="relative z-50  my-12 lg:my-24">
       <div className="sticky top-10">
         <div className="w-[80px] h-[80px] bg-emerald-400/20 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-40"></div>
         <div className="flex items-center justify-start relative">
@@ -31,6 +33,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
+    </SectionWrapper>
   );
 };
 

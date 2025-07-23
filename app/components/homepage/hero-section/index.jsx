@@ -9,31 +9,33 @@ import { FaXTwitter } from "react-icons/fa6";
 import { MdDownload } from "react-icons/md";
 import { RiContactsFill } from "react-icons/ri";
 import { SiLeetcode } from "react-icons/si";
+import SectionWrapper from "../../SectionWrapper";
 
 function HeroSection() {
   return (
-    <section className="relative flex flex-col items-center justify-center pt-4 pb-8 lg:pt-8 lg:pb-16 min-h-[calc(100vh-80px)] bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900">
-      {/* Modern 2025 animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 via-cyan-500/20 to-blue-600/15"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-pink-500/10"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-400/10 via-transparent to-transparent"></div>
-      
-      <Image
-        src="/hero.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-15"
-      />
-      
-      {/* Enhanced floating elements with 2025 colors */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-emerald-400/25 to-cyan-400/25 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
+    <SectionWrapper noPadding>
+      <section className="relative flex flex-col items-center justify-center min-h-[calc(100vh-80px)] bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900">
+        {/* Modern 2025 animated background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 via-cyan-500/20 to-blue-600/15"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/10 via-transparent to-pink-500/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-400/10 via-transparent to-transparent"></div>
+        
+        <Image
+          src="/hero.svg"
+          alt="Hero"
+          width={1572}
+          height={795}
+          className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-15"
+        />
+        
+        {/* Enhanced floating elements with 2025 colors */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-emerald-400/25 to-cyan-400/25 rounded-full mix-blend-multiply filter blur-3xl animate-float"></div>
       <div className="absolute top-40 right-10 w-96 h-96 bg-gradient-to-r from-orange-400/20 to-pink-400/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-2000"></div>
       <div className="absolute bottom-20 left-1/2 w-96 h-96 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl animate-float animation-delay-4000"></div>
       <div className="absolute top-1/2 left-1/4 w-72 h-72 bg-gradient-to-r from-emerald-500/15 to-teal-500/15 rounded-full mix-blend-multiply filter blur-2xl animate-float animation-delay-1000"></div>
       <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-orange-400/15 to-amber-400/15 rounded-full mix-blend-multiply filter blur-2xl animate-float animation-delay-3000"></div>
 
-      <div className="grid grid-cols-1 items-center lg:grid-cols-2 lg:gap-16 gap-y-8 max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div className="grid grid-cols-1 items-center lg:grid-cols-2 lg:gap-16 gap-y-8 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 relative z-10 w-full">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <div className="mb-4">
             <span className="inline-block px-4 py-2 text-sm font-medium text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 rounded-full backdrop-blur-sm">
@@ -89,13 +91,19 @@ function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full">
-            <Link href="#contact" className="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-cyan-600 p-[2px] rounded-xl transition-all duration-300 hover:from-emerald-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-emerald-500/25">
-              <button className="px-6 py-4 bg-slate-900/90 rounded-lg border-none text-center text-sm font-semibold uppercase tracking-wider text-white no-underline transition-all duration-300 ease-out flex items-center gap-2 hover:gap-3 group-hover:bg-gradient-to-r group-hover:from-emerald-500/10 group-hover:to-cyan-600/10">
+            <button 
+              onClick={() => {
+                // Try to get the tab change function from parent
+                const event = new CustomEvent('changeTab', { detail: 'contact' });
+                window.dispatchEvent(event);
+              }}
+              className="group relative overflow-hidden bg-gradient-to-r from-emerald-500 to-cyan-600 p-[2px] rounded-xl transition-all duration-300 hover:from-emerald-600 hover:to-cyan-700 hover:shadow-lg hover:shadow-emerald-500/25"
+            >
+              <div className="px-6 py-4 bg-slate-900/90 rounded-lg border-none text-center text-sm font-semibold uppercase tracking-wider text-white no-underline transition-all duration-300 ease-out flex items-center gap-2 hover:gap-3 group-hover:bg-gradient-to-r group-hover:from-emerald-500/10 group-hover:to-cyan-600/10">
                 <RiContactsFill size={18} className="transition-transform duration-300 group-hover:rotate-12" />
                 <span>Let&apos;s Connect</span>
-
-              </button>
-            </Link>
+              </div>
+            </button>
 
             <Link 
               className="group relative overflow-hidden flex items-center gap-2 hover:gap-3 rounded-xl bg-gradient-to-r from-orange-400 to-amber-500 px-6 py-4 text-center text-sm font-semibold uppercase tracking-wider text-black no-underline transition-all duration-300 ease-out hover:from-orange-500 hover:to-amber-600 hover:shadow-lg hover:shadow-orange-400/25" 
@@ -206,6 +214,7 @@ function HeroSection() {
         </div>
       </div>
     </section>
+    </SectionWrapper>
   );
 };
 

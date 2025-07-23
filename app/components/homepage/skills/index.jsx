@@ -3,10 +3,12 @@
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
+import SectionWrapper from "../../SectionWrapper";
 
 function Skills() {
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-emerald-800/30">
+    <SectionWrapper>
+      <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-emerald-800/30">
       {/* Modern background elements with 2025 colors */}
       <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/10 via-cyan-900/15 to-blue-900/10 rounded-3xl"></div>
       <div className="w-[150px] h-[150px] bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl"></div>
@@ -61,6 +63,7 @@ function Skills() {
         </div>
       </div>
     </div>
+    </SectionWrapper>
   );
 }
 

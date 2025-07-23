@@ -2,7 +2,7 @@
 // @flow strict
 import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
 
@@ -14,6 +14,22 @@ function ContactForm() {
     email: "",
     message: "",
   });
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  // Show toast after successful send
+  useEffect(() => {
+    if (showSuccess) {
+      toast.success("Email sent successfully!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+      setShowSuccess(false);
+    }
+  }, [showSuccess]);
 
   const checkRequired = () => {
     if (userInput.email && userInput.message && userInput.name) {
@@ -35,19 +51,10 @@ function ContactForm() {
 
     try {
       setIsLoading(true);
-      
       // Use relative path instead of environment variable
       const res = await axios.post('/api/contact', userInput);
-
       if (res.data.success) {
-        toast.success("✅ Email sent successfully!", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        setShowSuccess(true);
         setUserInput({
           name: "",
           email: "",
@@ -63,7 +70,7 @@ function ContactForm() {
         error?.message || 
         "❌ Failed to send message. Please try again.",
         {
-          position: "top-right",
+          position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -77,9 +84,9 @@ function ContactForm() {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <p className="font-medium mb-5 text-emerald-400 text-xl uppercase">Contact with me</p>
-      <div className="max-w-3xl text-white rounded-lg border border-emerald-400/20 p-3 lg:p-5 bg-slate-900/50 backdrop-blur-sm">
+      <div className="w-full max-w-2xl text-white rounded-lg border border-emerald-400/20 p-3 lg:p-5 bg-slate-900/50 backdrop-blur-sm">
         <p className="text-sm text-gray-300">{"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}</p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
@@ -115,7 +122,7 @@ function ContactForm() {
           <div className="flex flex-col gap-2">
             <label className="text-base">Your Message: </label>
             <textarea
-              className="bg-slate-800/50 w-full border rounded-md border-gray-600/50 focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/20 ring-0 outline-0 transition-all duration-300 px-3 py-2"
+              className="bg-slate-800/50 w-full border rounded-md border-gray-600/50 focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400/20 ring-0 outline-0 transition-all duration-300 px-3 py-2 resize-y min-h-[120px]"
               maxLength="500"
               name="message"
               required={true}

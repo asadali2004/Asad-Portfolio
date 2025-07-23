@@ -68,7 +68,9 @@ function ProjectCard({ project }) {
           </div>
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white font-medium drop-shadow-sm">Description:</span>
-            <span className="text-cyan-300 font-medium drop-shadow-sm">{' ' + project.description}</span>
+            <div className="text-cyan-300 font-medium drop-shadow-sm mt-2 leading-relaxed text-justify">
+              {project.description}
+            </div>
             <span className="text-gray-300 drop-shadow-sm">,</span>
           </div>
           <div><span className="text-gray-300 drop-shadow-sm">{`};`}</span></div>

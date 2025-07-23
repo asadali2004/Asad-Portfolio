@@ -2,11 +2,13 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import Image from "next/image";
+import SectionWrapper from "../../SectionWrapper";
 
 
 function AboutSection() {
   return (
-    <div id="about" className="my-12 lg:my-16 relative">
+    <SectionWrapper>
+      <div id="about" className="my-12 lg:my-16 relative">
       {/* Modern background elements with 2025 colors */}
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/5 via-transparent to-cyan-900/5 rounded-3xl"></div>
       <div className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full filter blur-3xl"></div>
@@ -39,6 +41,7 @@ function AboutSection() {
         </div>
       </div>
     </div>
+    </SectionWrapper>
   );
 };
 
