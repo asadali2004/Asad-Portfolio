@@ -2,7 +2,7 @@ export const personalData = {
   name: "ASAD ALI",
   profile: '/profile1.jpg',
   designation: "Full Stack Developer & DevOps Engineer",
-  description: "I am Asad Ali, a next-generation software engineer who architects cutting-edge solutions in the AI-driven era of 2025. I specialize in full-stack development with modern JavaScript ecosystems, building intelligent applications that leverage cloud-native technologies and AI integration. From scalable microservices on AWS to containerized deployments with Docker & Kubernetes, I engineer solutions that adapt to tomorrow's challenges. My expertise spans React ecosystems, Node.js backends, DevOps automation, and emerging GenAI technologies. I embrace the evolving tech landscape, continuously mastering cutting-edge frameworks, and delivering solutions that bridge today's needs with future possibilities.",
+  description: "I’m Asad Ali, a forward-thinking software engineer passionate about building cutting-edge solutions for the AI-driven future. Currently pursuing my B.Tech, I specialize in full-stack development using modern JavaScript ecosystems, with a focus on cloud-native architectures and AI integration. From scalable microservices on AWS to containerized deployments with Docker and Kubernetes, I engineer resilient, future-ready systems. My expertise spans React, Node.js, DevOps automation, and emerging Generative AI technologies. I thrive in the fast-evolving tech landscape—constantly learning, mastering new frameworks, and delivering solutions that bridge today's needs with tomorrow's innovation.",
   email: 'aliasad07518@gmail.com',
   phone: '+91 8252620527',
   address: 'Raxaul, Bihar, India - 845301',
