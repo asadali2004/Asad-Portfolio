@@ -150,8 +150,6 @@ function HeroSection() {
                   <span className="text-gray-400">{`['`}</span>
                   <span className="text-amber-300">JavaScript</span>
                   <span className="text-gray-400">{"', '"}</span>
-                  <span className="text-amber-300">Python</span>
-                  <span className="text-gray-400">{"', '"}</span>
                   <span className="text-amber-300">Java</span>
                   <span className="text-gray-400">{"', '"}</span>
                   <span className="text-amber-300">React</span>
