@@ -16,20 +16,40 @@ const ScrollToTop = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          setIsVisible(window.scrollY > SCROLL_THRESHOLD);
+          // Find the scrollable container
+          const scrollContainer = document.querySelector('[role="tabpanel"]')?.parentElement;
+          const scrollY = scrollContainer ? scrollContainer.scrollTop : window.scrollY;
+          setIsVisible(scrollY > SCROLL_THRESHOLD);
           ticking = false;
         });
         ticking = true;
       }
     };
     
+    // Listen to both window and container scroll
+    const scrollContainer = document.querySelector('[role="tabpanel"]')?.parentElement;
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
+    }
     window.addEventListener("scroll", handleScroll, { passive: true });
+    
     return () => {
-      window.removeEventListener("scroll", handleScroll, { passive: true });
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+      }
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const onClickBtn = () => {
+    // Scroll the container or window
+    const scrollContainer = document.querySelector('[role="tabpanel"]')?.parentElement;
+    if (scrollContainer) {
+      scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <button 

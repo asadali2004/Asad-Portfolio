@@ -14,11 +14,5 @@ export const experiences = [
     duration: "(Jun 2024 - July 2024)",
     description: "Created and optimized full-stack applications using MERN stack, improving backend performance by 40%. Integrated RESTful & Groq's APIs, enhancing real-time data handling by 50%. Refined full-stack development and database optimization through mentorship with 10+ industry experts.",
     skills: "JavaScript, React.js, Node.js, Express, MongoDB, API Integration"
-  },
-  // {
-  //   id: 3,
-  //   title: "Self Employed",
-  //   company: "Code and build something in everyday.",
-  //   duration: "(Jan 2018 - Present)"
-  // }
+  }
 ]

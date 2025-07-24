@@ -1,92 +1,35 @@
 // @flow strict
 
 import * as React from 'react';
+import { FaCode, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 function ProjectCard({ project }) {
-
   return (
-    <div className="relative rounded-xl overflow-hidden group smooth-transform hover:scale-[1.02]">
-      {/* Glass morphism background with better opacity */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-cyan-900/50 to-slate-900/70 backdrop-blur-xl"></div>
+    <div className="group relative w-full bg-gradient-to-br from-emerald-900/40 via-cyan-900/30 to-slate-900/50 backdrop-blur-sm border border-emerald-500/30 rounded-xl overflow-hidden hover:border-emerald-400/50 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20 hover:scale-[1.02]">
       
-      {/* Enhanced border with glow effect */}
-      <div className="absolute inset-0 rounded-xl border border-emerald-400/40 group-hover:border-emerald-300/60 smooth-transition shadow-lg shadow-emerald-500/10 group-hover:shadow-emerald-400/20"></div>
-      
-      {/* Content container with relative positioning */}
-      <div className="relative z-10 w-full">
-        <div className="flex flex-row">
-          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-400 to-cyan-500"></div>
-          <div className="h-[1px] w-full bg-gradient-to-r from-cyan-500 to-transparent"></div>
-        </div>
-        
-        <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
-          <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
-            <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400 shadow-sm"></div>
-            <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400 shadow-sm"></div>
-            <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200 shadow-sm"></div>
+      {/* Project Header */}
+      <div className="p-6 border-b border-emerald-500/20">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1">
+            <h3 className="text-xl lg:text-2xl font-bold text-emerald-300 mb-2 group-hover:text-emerald-200 transition-colors duration-300">
+              {project.name}
+            </h3>
+            <p className="text-sm text-cyan-400 font-medium mb-3">
+              {project.role}
+            </p>
           </div>
-          <p className="text-center ml-3 text-emerald-300 text-base lg:text-xl font-semibold drop-shadow-sm">
-            {project.name}
-          </p>
-        </div>
-        
-        <div className="overflow-hidden border-t-[2px] border-emerald-400/30 px-4 lg:px-8 py-4 lg:py-8 bg-black/10 backdrop-blur-sm">
-          <code className="font-mono text-xs md:text-sm lg:text-base leading-relaxed">
-            <div className="blink">
-              <span className="mr-2 text-pink-400 font-semibold drop-shadow-sm">const</span>
-              <span className="mr-2 text-white font-medium drop-shadow-sm">project</span>
-              <span className="mr-2 text-pink-400 font-semibold drop-shadow-sm">=</span>
-              <span className="text-gray-300 drop-shadow-sm">{'{'}</span>
-            </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white font-medium drop-shadow-sm">name:</span>
-            <span className="text-gray-300 drop-shadow-sm">{`'`}</span>
-            <span className="text-amber-300 font-medium drop-shadow-sm">{project.name}</span>
-            <span className="text-gray-300 drop-shadow-sm">{`',`}</span>
-          </div>
-
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white font-medium drop-shadow-sm">tools:</span>
-            <span className="text-gray-300 drop-shadow-sm">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300 font-medium drop-shadow-sm">{tag}</span>
-                  {
-                    project.tools?.length - 1 !== i &&
-                    <span className="text-gray-300 drop-shadow-sm">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
-            <span className="text-gray-300 drop-shadow-sm">{"],"}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white font-medium drop-shadow-sm">myRole:</span>
-            <span className="text-orange-300 font-medium drop-shadow-sm">{project.role}</span>
-            <span className="text-gray-300 drop-shadow-sm">,</span>
-          </div>
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white font-medium drop-shadow-sm">Description:</span>
-            <div className="text-cyan-300 font-medium drop-shadow-sm mt-2 leading-relaxed text-justify">
-              {project.description}
-            </div>
-            <span className="text-gray-300 drop-shadow-sm">,</span>
-          </div>
-          <div><span className="text-gray-300 drop-shadow-sm">{`};`}</span></div>
-        </code>
-        
-        {/* Action buttons */}
-        <div className="px-4 lg:px-8 py-4 bg-black/20 backdrop-blur-sm border-t border-emerald-400/20">
-          <div className="flex gap-3 justify-center">
+          
+          {/* Action Buttons */}
+          <div className="flex gap-3">
             {project.code && (
               <a
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-emerald-600 to-cyan-600 text-white text-sm font-medium rounded-lg btn-smooth shadow-lg hover:shadow-emerald-500/25 border border-emerald-400/30"
+                className="p-2 bg-emerald-600/20 hover:bg-emerald-600/40 border border-emerald-500/30 hover:border-emerald-400/50 rounded-lg text-emerald-300 hover:text-emerald-200 transition-all duration-300 hover:scale-110"
+                title="View Code"
               >
-                View Code
+                <FaGithub size={18} />
               </a>
             )}
             {project.demo && (
@@ -94,17 +37,73 @@ function ProjectCard({ project }) {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm font-medium rounded-lg btn-smooth shadow-lg hover:shadow-orange-500/25 border border-orange-400/30"
+                className="p-2 bg-orange-600/20 hover:bg-orange-600/40 border border-orange-500/30 hover:border-orange-400/50 rounded-lg text-orange-300 hover:text-orange-200 transition-all duration-300 hover:scale-110"
+                title="Live Demo"
               >
-                Live Demo
+                <FaExternalLinkAlt size={18} />
               </a>
             )}
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Project Content */}
+      <div className="p-6">
+        {/* Description */}
+        <p className="text-gray-300 leading-relaxed mb-6 text-justify">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="mb-6">
+          <h4 className="text-emerald-400 font-semibold mb-3 flex items-center gap-2">
+            <FaCode size={16} />
+            Technologies Used
+          </h4>
+          <div className="flex flex-wrap gap-2">
+            {project.tools.map((tool, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-slate-800/50 border border-emerald-500/20 rounded-full text-xs font-medium text-emerald-300 hover:bg-emerald-500/10 hover:border-emerald-400/30 transition-all duration-300"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Action Buttons (Larger) */}
+        <div className="flex gap-4 pt-4 border-t border-emerald-500/20">
+          {project.code && (
+            <a
+              href={project.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-emerald-600/20 to-cyan-600/20 hover:from-emerald-600/30 hover:to-cyan-600/30 border border-emerald-500/30 hover:border-emerald-400/50 rounded-lg text-emerald-300 hover:text-emerald-200 transition-all duration-300 hover:scale-[1.02] font-medium"
+            >
+              <FaGithub size={16} />
+              View Code
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-orange-600/20 to-red-600/20 hover:from-orange-600/30 hover:to-red-600/30 border border-orange-500/30 hover:border-orange-400/50 rounded-lg text-orange-300 hover:text-orange-200 transition-all duration-300 hover:scale-[1.02] font-medium"
+            >
+              <FaExternalLinkAlt size={16} />
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+
+      {/* Subtle background pattern */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/5 to-transparent rounded-full -translate-y-16 translate-x-16 group-hover:from-emerald-400/10 transition-all duration-500"></div>
+      <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-cyan-400/5 to-transparent rounded-full translate-y-12 -translate-x-12 group-hover:from-cyan-400/10 transition-all duration-500"></div>
     </div>
   );
-};
+}
 
 export default ProjectCard;

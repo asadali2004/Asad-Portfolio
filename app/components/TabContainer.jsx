@@ -3,6 +3,7 @@
 import { useState, lazy, Suspense, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TabAwareNavbar from './TabAwareNavbar';
+import Footer from './footer';
 
 // Custom ChevronDown icon to avoid extra dependency
 const ChevronDownIcon = ({ className }) => (
@@ -110,31 +111,34 @@ const TabContainer = () => {
   };
 
   const contentVariants = {
-    hidden: { opacity: 0, x: 20 },
+    hidden: { opacity: 0, y: 8 },
     visible: { 
       opacity: 1, 
-      x: 0,
+      y: 0,
       transition: {
-        duration: 0.4,
-        ease: [0.4, 0.0, 0.2, 1]
+        duration: 0.2,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     },
     exit: { 
       opacity: 0, 
-      x: -20,
+      y: -8,
       transition: {
-        duration: 0.2
+        duration: 0.15,
+        ease: [0.4, 0.0, 1, 1]
       }
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900">
-      {/* Integrated Navigation */}
-      <TabAwareNavbar activeTab={activeTab} onTabChange={handleTabChange} />
+    <div className="min-h-screen max-h-screen bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900 flex flex-col">
+      {/* Fixed Navigation */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <TabAwareNavbar activeTab={activeTab} onTabChange={handleTabChange} />
+      </div>
 
-      {/* Tab Content */}
-      <div className="relative pt-20">
+      {/* Scrollable Content Area */}
+      <div className="flex-1 overflow-y-auto overflow-x-hidden scrollable-content" style={{ height: 'calc(100vh - 80px)', marginTop: '80px' }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -145,13 +149,18 @@ const TabContainer = () => {
             role="tabpanel"
             id={`tabpanel-${activeTab}`}
             aria-labelledby={`tab-${activeTab}`}
-            className="min-h-[calc(100vh-80px)]"
+            className="min-h-full"
           >
             <Suspense fallback={<LoadingSpinner />}>
               {ActiveComponent && <ActiveComponent />}
             </Suspense>
           </motion.div>
         </AnimatePresence>
+      </div>
+
+      {/* Fixed Footer at the bottom of the viewport */}
+      <div className="fixed bottom-0 left-0 right-0 z-40">
+        <Footer />
       </div>
     </div>
   );

@@ -9,15 +9,52 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden; /* Prevent window scrolling */
 }
 
-/* Prevent layout shifts */
+/* Prevent layout shifts and improve mobile performance */
 img {
   height: auto;
   max-width: 100%;
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
 }
 
-/* Optimize rendering with hardware acceleration */
+/* Scrollable content area - optimized for performance */
+.scrollable-content {
+  scroll-behavior: auto; /* Changed from smooth for better performance */
+  scrollbar-width: thin;
+  scrollbar-color: #16f2b3 #0d1224;
+  /* Hardware acceleration for smooth scrolling */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Optimize rendering */
+  contain: layout style paint;
+  will-change: scroll-position;
+  /* Flexbox for proper footer positioning */
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(13, 18, 36, 0.5);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #16f2b3, #ec4899);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #14d9a2, #db2777);
+}
+
+/* Optimize rendering with hardware acceleration - mobile first */
 .will-change-transform {
   will-change: transform;
 }
@@ -26,29 +63,45 @@ img {
   will-change: opacity;
 }
 
+.will-change-auto {
+  will-change: auto;
+}
+
 /* Remove will-change after animation */
 .animation-finished {
   will-change: auto;
 }
 
-/* Smooth transition utilities */
+/* Smooth transition utilities - optimized for performance */
 .smooth-transition {
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .smooth-transform {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
 
 .btn-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 
 .btn-smooth:hover {
-  transform: scale(1.05) translateZ(0);
+  transform: scale(1.02) translateZ(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 :root {
@@ -66,18 +119,24 @@ img {
   }
 }
 
-/* Enable hardware acceleration for smooth animations */
+/* Enable hardware acceleration for smooth animations - mobile optimized */
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-gradient);
-  background-attachment: fixed;
+  /* Remove background-attachment: fixed for mobile performance */
+  background-attachment: scroll;
   min-height: 100vh;
   position: relative;
   transform: translateZ(0); /* Force hardware acceleration */
   backface-visibility: hidden;
   perspective: 1000px;
+  /* Optimize for mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
 }
 
+/* Mobile-first background overlay */
 body::before {
   content: '';
   position: fixed;
@@ -88,29 +147,41 @@ body::before {
   background: var(--background-overlay);
   pointer-events: none;
   z-index: -1;
+  will-change: auto;
 }
 
-/* Enhanced animations with GPU acceleration */
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+  
+  body::before {
+    background: none; /* Remove overlay on mobile for better performance */
+  }
+}
+
+/* Enhanced animations with GPU acceleration - mobile optimized */
 @keyframes float {
   0%, 100% { 
     transform: translate3d(0, 0px, 0); 
-    will-change: transform;
+    will-change: auto;
   }
   50% { 
-    transform: translate3d(0, -10px, 0); 
-    will-change: transform;
+    transform: translate3d(0, -8px, 0); 
+    will-change: auto;
   }
 }
 
 @keyframes glow {
-  0%, 100% { text-shadow: 0 0 5px rgba(22, 242, 179, 0.3), 0 0 10px rgba(22, 242, 179, 0.2); }
-  50% { text-shadow: 0 0 10px rgba(22, 242, 179, 0.5), 0 0 20px rgba(22, 242, 179, 0.3); }
+  0%, 100% { text-shadow: 0 0 3px rgba(22, 242, 179, 0.2), 0 0 6px rgba(22, 242, 179, 0.1); }
+  50% { text-shadow: 0 0 6px rgba(22, 242, 179, 0.3), 0 0 12px rgba(22, 242, 179, 0.2); }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 20px, 0);
     will-change: transform, opacity;
   }
   to {
@@ -123,7 +194,7 @@ body::before {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-15px, 0, 0);
     will-change: transform, opacity;
   }
   to {
@@ -136,7 +207,7 @@ body::before {
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale3d(0.9, 0.9, 1);
+    transform: scale3d(0.95, 0.95, 1);
     will-change: transform, opacity;
   }
   to {
@@ -147,8 +218,20 @@ body::before {
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
   transform: translateZ(0); /* Hardware acceleration */
+}
+
+/* Disable heavy animations on mobile */
+@media (max-width: 768px) {
+  .animate-float {
+    animation: none;
+    transform: translateZ(0);
+  }
+  
+  .animate-glow {
+    animation: none;
+  }
 }
 
 .animate-glow {
@@ -311,4 +394,86 @@ body::before {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #14d9a2, #db2777);
+}
+
+/* Scrollable content container */
+.scrollable-content {
+  scrollbar-width: thin;
+  scrollbar-color: #16f2b3 #0d1224;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: rgba(13, 18, 36, 0.5);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #16f2b3, #ec4899);
+  border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #14d9a2, #db2777);
+}
+
+/* Scroll container optimizations */
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: #16f2b3 #0d1224;
+  scroll-behavior: smooth;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: rgba(13, 18, 36, 0.5);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #16f2b3, #ec4899);
+  border-radius: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #14d9a2, #db2777);
+}
+
+.scroll-container.scrolling-active {
+  border-color: rgba(22, 242, 179, 0.5) !important;
+  box-shadow: 0 0 20px rgba(22, 242, 179, 0.2);
+}
+
+/* Project card interaction styles */
+.project-card {
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .scroll-container {
+    max-height: calc(100vh - 120px) !important;
+    padding: 4px;
+  }
+  
+  .project-card:hover {
+    transform: none; /* Disable hover effects on mobile */
+  }
 }

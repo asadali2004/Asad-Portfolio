@@ -1,4 +1,4 @@
-export const projectsData = [
+const projectsData = [
     {
         id: 1,
         name: 'Rekno – Knowledge Graph & Memory Simulator',
@@ -23,7 +23,7 @@ export const projectsData = [
         description: "Laravel-powered plant identification platform with high accuracy using advanced computer vision APIs. Serves plant enthusiasts with comprehensive care instructions for extensive plant species database. Implemented efficient image processing with optimized upload capabilities and MySQL database queries for improved performance. Built scalable 'My Garden' feature supporting unlimited plant collections with excellent user satisfaction. Integrated automated watering reminders significantly improving plant care success rates among users.",
         tools: ['HTML', 'CSS', 'PHP', 'LARAVEL', 'Plant API', 'MySQL'],
         role: 'Backend Developer',
-        code: 'https://github.com/asadali2004/plantsIdentify.git',
+        code: 'https://github.com/asadali2004/plant_Identifier.git',
         demo: 'https://www.linkedin.com/posts/asadalli_laravel-phpdeveloper-fullstackdevelopment-activity-7321526842807513088-6qjq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx4QiUBWaoxxyZlKgU1VDMeIO-kBhZ6i5A',
     },
     {
@@ -32,7 +32,7 @@ export const projectsData = [
         description: 'Comprehensive pet adoption platform connecting numerous NGOs with potential adopters worldwide. Built responsive React.js frontend and robust PHP backend handling extensive adoption requests monthly. Implemented advanced search algorithms significantly reducing pet discovery time through intelligent matching systems. Integrated secure authentication system with excellent success rates and optimized database architecture supporting large pet listings with fast query responses. Achieved high successful adoption rates through smart matching algorithms and streamlined communication features.',
         tools: ['React.js', 'PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Session Management', 'User Authentication', 'GitHub'],
         role: 'Full Stack Developer',
-        code: 'https://github.com/asadali2004/AdoptiPaws.git',
+        code: 'https://github.com/asadali2004/adoptipaws_landing_page.git',
         demo: 'https://www.adoptipaws.social/',
     },
     {
@@ -46,16 +46,4 @@ export const projectsData = [
     }
 ];
 
-
-// Do not remove any property.
-// Leave it blank instead as shown below
-
-// {
-//     id: 1,
-//     name: '',
-//     description: "",
-//     tools: [],
-//     role: '',
-//     code: '',
-//     demo: '',
-// },
+export { projectsData };

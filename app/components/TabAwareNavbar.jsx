@@ -26,8 +26,8 @@ function Navbar({ activeTab, onTabChange }) {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] backdrop-blur-md bg-[#0d1224]/90 border-b border-gray-800/50 w-full">
-      <div className="flex items-center justify-between py-4 px-6 mx-auto max-w-7xl">
+    <nav className="fixed top-0 left-0 right-0 z-[9999] backdrop-blur-md bg-[#0d1224]/90 border-b border-gray-800/50 w-full h-[80px]">
+      <div className="flex items-center justify-between h-full py-4 px-6 mx-auto max-w-7xl">
         <div className="flex flex-shrink-0 items-center">
           <button
             onClick={() => handleNavClick('hero')}
