@@ -1,26 +1,38 @@
-import { personalData } from "@/utils/data/personal-data";
-import TabContainer from "./components/TabContainer";
+import PortfolioPage from "./components/PortfolioPage";
+import Script from "next/script";
 
-async function getData() {
-  const res = await fetch(`https://dev.to/api/articles?username=${personalData.devUsername}`)
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  const data = await res.json();
-
-  const filtered = data.filter((item) => item?.cover_image).sort(() => Math.random() - 0.5);
-
-  return filtered;
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Asad Ali",
+  url: "https://iamasad.me",
+  jobTitle: "Software Engineer",
+  email: "mailto:aliasad07518@gmail.com",
+  sameAs: [
+    "https://github.com/asadali2004",
+    "https://linkedin.com/in/asadalli",
+  ],
+  knowsAbout: [
+    ".NET",
+    "ASP.NET Core",
+    "Microservices",
+    "Angular",
+    "AWS",
+    "Docker",
+    "REST APIs",
+    "CI/CD",
+  ],
 };
 
 export default async function Home() {
-  // const blogs = await getData();
-
   return (
     <div suppressHydrationWarning>
-      <TabContainer />
+      <Script
+        id="person-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <PortfolioPage />
     </div>
   )
 };

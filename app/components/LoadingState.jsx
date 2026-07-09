@@ -28,12 +28,11 @@ const LoadingState = ({ children }) => {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-emerald-900 to-cyan-900 flex items-center justify-center z-50">
-        <div className="relative">
-          {/* Loading spinner */}
-          <div className="w-12 h-12 border-4 border-emerald-500/30 border-t-emerald-400 rounded-full animate-spin"></div>
-          {/* Loading text */}
-          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-emerald-400 text-sm font-medium">
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#080b12]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.16),transparent_38%),linear-gradient(135deg,rgba(8,11,18,0.98),rgba(13,17,27,0.98))]" />
+        <div className="relative flex flex-col items-center gap-4">
+          <div className="h-14 w-14 rounded-full border-4 border-teal-300/20 border-t-teal-300 animate-spin" />
+          <div className="text-sm font-medium text-teal-200">
             Loading...
           </div>
         </div>

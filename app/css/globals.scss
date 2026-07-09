@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow: hidden; /* Prevent window scrolling */
+  overflow-x: hidden;
 }
 
 /* Prevent layout shifts and improve mobile performance */
@@ -106,8 +106,8 @@ img {
 
 :root {
   --foreground-rgb: rgb(211, 216, 232);
-  --background-gradient: linear-gradient(135deg, #0f172a 0%, #064e3b 25%, #155e75 50%, #064e3b 75%, #0f172a 100%);
-  --background-overlay: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.15) 0%, transparent 50%);
+  --background-gradient: #080b12;
+  --background-overlay: none;
   --accent-emerald: #10b981;
   --accent-cyan: #06b6d4;
   --accent-orange: #f97316;
@@ -129,16 +129,15 @@ body {
   position: relative;
   transform: translateZ(0); /* Force hardware acceleration */
   backface-visibility: hidden;
-  perspective: 1000px;
   /* Optimize for mobile */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizeLegibility;
 }
 
 /* Mobile-first background overlay */
 body::before {
-  content: '';
+  content: none;
   position: fixed;
   top: 0;
   left: 0;

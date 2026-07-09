@@ -28,10 +28,7 @@ module.exports = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   // Performance optimizations
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react'],
-  },
+  experimental: {},
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },

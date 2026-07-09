@@ -1,6 +1,6 @@
 export const personalData = {
   name: "ASAD ALI",
-  profile: '/profile1.jpg',
+  profile: '/image/Profile-photo.png',
   designation: "Full Stack Developer & DevOps Engineer",
   description: "I’m Asad Ali, a forward-thinking software engineer passionate about building cutting-edge solutions for the AI-driven future. Currently pursuing my B.Tech, I specialize in full-stack development using modern JavaScript ecosystems, with a focus on cloud-native architectures and AI integration. From scalable microservices on AWS to containerized deployments with Docker and Kubernetes, I engineer resilient, future-ready systems. My expertise spans React, Node.js, DevOps automation, and emerging Generative AI technologies. I thrive in the fast-evolving tech landscape—constantly learning, mastering new frameworks, and delivering solutions that bridge today's needs with tomorrow's innovation.",
   email: 'aliasad07518@gmail.com',
@@ -13,5 +13,5 @@ export const personalData = {
   stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
   leetcode: "https://leetcode.com/u/asadali04/",
   devUsername: "said7388",
-  resume: "https://drive.google.com/file/d/1wnFFzlXUy9cTzOYDlUrF03rJu-u66aYu/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/11HeIj-NNkHSjfkktB3_BxjYt8fFZ9oWd/view?usp=sharing"
 }

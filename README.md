@@ -1,53 +1,57 @@
 
- # Asad Ali - Developer Portfolio
+# Asad Ali - Developer Portfolio
 
- This is my personal portfolio website built with **Next.js 15**, showcasing my projects, certifications, education, skills, and experiences. It highlights my journey as a developer and serves as a central place for my professional work.
-
- ---
-
- ## 🚀 Technologies Used
- - Next.js 15
- - React 19
- - Tailwind CSS
- - Framer Motion
- - React Icons
- - Shadcn/UI
-
- ## 📁 Features
- - Home, About, Skills, Projects, Education, Certificates, and Contact sections
- - Certification and Education Timeline
- - Responsive design (Mobile and Desktop friendly)
- - Smooth page transitions and animations
- - Fixed Navbar and Footer with scrollable content
- - Code-split and lazy-loaded sections for performance
- - Clean, modern UI with custom SVG and Lottie assets
+This is my personal portfolio website built with **Next.js 15** and React 19. It presents my current profile, featured project work, certificates, skills, and contact details in a polished single-page layout.
 
  ---
 
- ## 🆕 Recent Updates
- - Improved mobile performance and fixed white box/lag issues
- - Refactored Projects section for better scrolling and UX
- - Fixed Navbar (always visible) and Footer (fixed at bottom)
- - Cleaned up unused/commented code and removed deprecated files
- - Security and dependency updates
- - Enhanced smooth transitions and loading states
+## 🚀 Technologies Used
+- Next.js 15
+- React 19
+- Tailwind CSS
+- Framer Motion
+- React Icons
+- Sass
+
+## 📁 Features
+- Responsive hero section with resume, social links, and profile card
+- Featured project section with ZyntraPay and supporting project cards
+- Certificate section with direct Google Drive links
+- Skills, experience, education, and contact sections
+- Dark theme with smooth transitions and loading states
+- Optimized asset handling with local `public/image` files
+- Blog page for Dev.to articles
 
  ---
 
- ## 📸 Screenshot
-
- ![Home](./Home.png)
-
- ---
-
- ## Getting Started
-
- 1. Clone the repo
- 2. Install dependencies with `npm install`
- 3. Run the development server with `npm run dev`
+## 🆕 Recent Updates
+- Updated all resume buttons to use the new Google Drive link
+- Added certificate Drive links for the portfolio certificate cards
+- Refreshed the hero section layout and theme colors
+- Fixed broken image paths by pointing to the actual `public/image` assets
+- Removed unused legacy components and data files
+- Updated loading, navbar, and scroll-to-top styling to match the current theme
 
  ---
 
- Feel free to reach out via the Contact section!
+## 📸 Screenshot
+
+![Home](./Home.png)
+
+ ---
+
+## Getting Started
+
+1. Clone the repo
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+
+## Build Status
+
+The current version builds successfully with `npm run build`.
+
+ ---
+
+Feel free to reach out via the Contact section.
 
 
